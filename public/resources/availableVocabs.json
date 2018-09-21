@@ -1,0 +1,4 @@
+[ { "name": "ulpan"                   , "url": "resources/vocab/ulpan.yml" }
+, { "name": "hebrew_colloquial_course", "url": "resources/vocab/hebrew_colloquial_course.yml" }
+, { "name": "hsk1"                    , "url": "resources/vocab/hsk1.yml" }
+]

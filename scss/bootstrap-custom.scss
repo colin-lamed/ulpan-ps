@@ -1,0 +1,14 @@
+// Your variable overrides
+$enable-gradients: true;
+
+$theme-colors: (
+  "blue": #337ab7,
+  "primary": #337ab7
+);
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Font-awesome
+$fa-font-path: "../fonts/font-awesome";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";

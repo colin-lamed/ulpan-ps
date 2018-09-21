@@ -1,0 +1,9 @@
+.psc-package/
+.psc-ide-port
+output/
+public/css/bootstrap-custom.css
+public/fonts/font-awesome/
+public/js/Main.js
+node_modules/
+package-lock.json
+
