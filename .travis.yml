@@ -19,4 +19,5 @@ script:
   - npm run sass
   - npm run fonts
   - npm run build
+  - npm run prepareSW
   - npm run test

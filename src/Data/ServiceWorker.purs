@@ -1,6 +1,12 @@
-module Data.ServiceWorker where
+module Data.ServiceWorker
+  ( registerServiceWorker
+  ) where
 
 import Prelude
-import Effect (Effect)
+import Effect.Aff (Aff)
+import Effect.Aff.Compat (EffectFnAff, fromEffectFnAff)
 
-foreign import registerServiceWorker ∷ String → Effect Unit
+foreign import _registerServiceWorker ∷ String → EffectFnAff Unit
+
+registerServiceWorker :: String -> Aff Unit
+registerServiceWorker = fromEffectFnAff <<< _registerServiceWorker

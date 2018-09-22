@@ -2,7 +2,7 @@ module Ulpan.Component.App where
 
 import Prelude
 import Data.Const (Const)
-import Data.Either (Either(..), either)
+import Data.Either (Either(..))
 import Data.Either.Nested (type (\/))
 import Data.Functor.Coproduct.Nested (type (<\/>))
 import Data.Maybe (Maybe(..), isNothing)
@@ -20,7 +20,7 @@ import Record (merge)
 import Ulpan.Component.Configure as Configure
 import Ulpan.Component.Test as Test
 import Ulpan.Component.VocabSelector as VocabSelector
-import Ulpan.LocalStorage (storeConfiguration, storeMode, storeVocabFile, restoreConfiguration, restoreMode, restoreVocab, restoreVocabFile)
+import Ulpan.LocalStorage (storeConfiguration, storeMode, storeVocabFile, restoreConfiguration, restoreMode, restoreVocabFile)
 import Ulpan.Model (Configuration(..), Mode(..), TestDirection(..), TestOrdering(..), Vocab, VocabFile)
 import Ulpan.VocabLoader (loadVocab)
 
@@ -191,8 +191,7 @@ component =
 
     H.liftEffect restoreVocabFile >>= case _ of
       Left err        → H.liftEffect $ error $ "Could not restore vocabFile: " <> err
-      Right vocabFile → -- try and load from storage - if not, download
-                        do vocab ← either (const $ H.liftAff $ loadVocab vocabFile) pure =<< H.liftEffect restoreVocab
+      Right vocabFile → do vocab ← H.liftAff $ loadVocab vocabFile
                            H.modify_ _ { vocabFile = Just vocabFile
                                        , vocab     = Just vocab
                                        }
@@ -203,13 +202,12 @@ component =
   eval (HandleVocabSelector (VocabSelector.NotifyVocabFile Nothing) next) = do
     H.modify_ _ { mode = Test } $> next
   eval (HandleVocabSelector (VocabSelector.NotifyVocabFile (Just vocabFile)) next) = do
-    -- TODO can we just back the State with local storage?
     vocab ← H.liftAff $ loadVocab vocabFile
 
     let mode = Test
 
+    -- TODO can we just back the State with local storage?
     H.liftEffect $ storeVocabFile vocabFile
-    -- H.liftEffect $ storeVocab vocab
     H.liftEffect $ storeMode mode
 
     H.modify_ $ merge { vocabFile : Just vocabFile

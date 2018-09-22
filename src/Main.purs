@@ -11,5 +11,5 @@ import Data.ServiceWorker (registerServiceWorker)
 main ∷ Effect Unit
 main = HA.runHalogenAff do
   body ← HA.awaitBody
-  H.liftEffect $ registerServiceWorker "js/service-worker.js"
+  H.liftAff $ registerServiceWorker "service-worker.js"
   void $ runUI App.component unit body

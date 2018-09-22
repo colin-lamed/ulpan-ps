@@ -8,9 +8,7 @@ import Data.Maybe (Maybe, maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
 import Foreign.Generic (defaultOptions, genericDecodeJSON, genericEncodeJSON)
-import Ulpan.Model (Configuration, Mode, Vocab, VocabFile)
-import Data.Argonaut.Decode (class DecodeJson, decodeJson, getField)
-import Data.Argonaut.Parser (jsonParser)
+import Ulpan.Model (Configuration, Mode, VocabFile)
 
 
 foreign import setLocalStorage
@@ -40,7 +38,6 @@ encodeConfiguration = genericEncodeJSON defaultOptions
 decodeConfiguration :: String -> Either String Configuration
 decodeConfiguration = lmap show <<< runExcept <<< genericDecodeJSON defaultOptions
 
-
 storeConfiguration :: Configuration -> Effect Unit
 storeConfiguration = encodeConfiguration >>> setLocalStorage "configuration"
 
@@ -59,7 +56,6 @@ restoreMode = do
     >>= maybe (Left "No mode") decodeMode
     >>> pure
 
-
 storeVocabFile :: VocabFile -> Effect Unit
 storeVocabFile = encodeVocabFile >>> setLocalStorage "vocabFile"
 
@@ -67,15 +63,4 @@ restoreVocabFile :: Effect (Either String VocabFile)
 restoreVocabFile = do
   getLocalStorage "vocabFile"
     >>= maybe (Left "No vocabFile") decodeVocabFile
-    >>> pure
-
--- Vocab using same Aeson defined for pulling from Apis
---
--- storeVocab :: Vocab -> Effect Unit
--- storeVocab = ?encodeVocab >>> setLocalStorage "vocab"
---
-restoreVocab :: Effect (Either String Vocab)
-restoreVocab = do
-  getLocalStorage "vocab"
-    >>= maybe (Left "No vocab") (\s -> jsonParser s >>= decodeJson)
     >>> pure

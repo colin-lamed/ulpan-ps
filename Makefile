@@ -8,9 +8,13 @@ build:
 	npm run sass
 	npm run fonts
 	npm run build
+	npm run prepareSW
 
 test: #setup
 	npm run test
+
+serve: #build
+	npm run serve
 
 # since `build` and `test` are also a directory, it will not be built without this
 # (or `make -B test`):

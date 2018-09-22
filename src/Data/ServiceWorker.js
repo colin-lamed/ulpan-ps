@@ -1,11 +1,14 @@
 "use strict";
 
-exports.registerServiceWorker = function(serviceWorkerJs) {
-  return function() {
+exports._registerServiceWorker = function(serviceWorkerJs) {
+  return function(onError, onSuccess) {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register(serviceWorkerJs)
-        .then(function() { console.log('Service Worker Registered'); });
+        .then(onSuccess)
+        .catch(onError);
+    } else {
+      onError("No serviceWorker");
     }
   };
 };

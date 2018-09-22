@@ -4,6 +4,6 @@ output/
 public/css/bootstrap-custom.css
 public/fonts/font-awesome/
 public/js/Main.js
+public/service-worker.js
 node_modules/
 package-lock.json
-

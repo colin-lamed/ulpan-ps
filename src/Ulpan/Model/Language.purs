@@ -135,11 +135,12 @@ newtype Meta = Meta
 
 derive instance newtypeMeta ∷ Newtype Meta _
 
-instance eqMeta ∷ Eq Meta where
-  eq a b = equal (unwrap a) (unwrap b)
+derive instance eqMeta ∷ Eq Meta
+
+derive instance genericMeta ∷ Generic Meta _
 
 instance showMeta ∷ Show Meta where
-  show = ("Meta " <> _) <<< show <<< unwrap
+  show = genericShow
 
 instance decodeJsonMeta ∷ DecodeJson Meta where
   decodeJson json = do
