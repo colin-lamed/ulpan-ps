@@ -10,11 +10,10 @@ import Data.Argonaut.Decode (decodeJson)
 import Data.Argonaut.Parser (jsonParser)
 import Data.Either (Either(..), either)
 import Data.HTTP.Method (Method(GET))
-import Data.Newtype (unwrap)
 import Data.YAML.Foreign.Decode (parseYAMLToJson)
 import Effect.Aff (Aff, throwError)
-import Ulpan.Model (Vocab, VocabFile)
 import Effect.Exception as Ex
+import Ulpan.Model (Vocab, VocabFile, (^))
 import Network.HTTP.Affjax as AX
 import Network.HTTP.Affjax.Response as AXRs
 import Network.HTTP.StatusCode(StatusCode(StatusCode))
@@ -28,7 +27,7 @@ loadAvailableVocabs = do
 
 loadVocab ∷ VocabFile → Aff Vocab
 loadVocab vocabFile = do
-  yamlStr ← get (unwrap vocabFile).url
+  yamlStr ← get $ vocabFile ^ _.url
   case runExcept $ parseYAMLToJson yamlStr of
     Left err   → throwError $ Ex.error $ "Could not parse yaml: " <> show err
     Right json → either (throwError <<< Ex.error) pure (decodeJson json)

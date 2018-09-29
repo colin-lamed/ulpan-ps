@@ -4,7 +4,6 @@ import Prelude
 
 import Data.Array as A
 import Data.Maybe (Maybe(..))
-import Data.Newtype (unwrap)
 import DOM.HTML.Indexed.ButtonType (ButtonType(ButtonButton))
 import Effect.Aff (Aff)
 import Halogen as H
@@ -12,7 +11,7 @@ import Halogen.HTML as HH
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 import Record (merge)
-import Ulpan.Model (VocabFile)
+import Ulpan.Model (VocabFile, (^))
 import Ulpan.VocabLoader (loadAvailableVocabs)
 
 
@@ -26,7 +25,6 @@ data Query a
   | HandleInput Input a
   | ChangeVocabFile (Maybe VocabFile) a
   | Apply a
-  | Cancel a
 
 type Input =
   { vocabFile ∷ Maybe VocabFile }
@@ -77,7 +75,7 @@ component =
                   <> (st.availableVocabs <#> \availableVocab →
                        HH.option
                          [ HP.selected (Just availableVocab == st.vocabFile) ]
-                         [ HH.text (unwrap availableVocab).name ]
+                         [ HH.text $ availableVocab ^ _.name ]
                      )
               ]
           , HH.button
@@ -87,14 +85,6 @@ component =
               ]
               [ HH.span_
                   [ HH.text "Apply"]
-              ]
-          , HH.button
-              [ HP.type_ ButtonButton
-              , HP.class_ (HH.ClassName "btn btn-secondary")
-              , HE.onClick (HE.input_ Cancel)
-              ]
-              [ HH.span_
-                  [ HH.text "Cancel"]
               ]
           ]
       ]
@@ -113,4 +103,3 @@ component =
     vocabFile ← H.gets _.vocabFile
     H.raise (NotifyVocabFile vocabFile)
     pure next
-  eval (Cancel next) = pure next

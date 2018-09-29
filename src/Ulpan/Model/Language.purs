@@ -5,6 +5,7 @@ import Prelude
 import Control.Alt ((<|>))
 import Data.Argonaut.Core (Json, toArray, toObject, toString)
 import Data.Argonaut.Decode (class DecodeJson, getField)
+import Data.Array as A
 import Data.Either (Either, note)
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
@@ -15,7 +16,6 @@ import Data.TraversableWithIndex (traverseWithIndex)
 import Foreign.Class (class Decode)
 import Foreign.Generic (defaultOptions, genericDecode)
 import Foreign.Object as O
-import Record (equal)
 import Test.QuickCheck.Arbitrary (class Arbitrary, genericArbitrary)
 
 
@@ -190,6 +190,9 @@ instance decodeJsonVocab ∷ DecodeJson Vocab where
       { meta
       , vocab
       }
+
+vGroups :: Vocab -> Array Group
+vGroups vocab = A.fromFoldable $ M.keys (unwrap vocab).vocab
 
 -- VocabFile
 

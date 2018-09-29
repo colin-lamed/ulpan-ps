@@ -8,5 +8,5 @@ import Effect.Aff.Compat (EffectFnAff, fromEffectFnAff)
 
 foreign import _registerServiceWorker ∷ String → EffectFnAff Unit
 
-registerServiceWorker :: String -> Aff Unit
+registerServiceWorker ∷ String → Aff Unit
 registerServiceWorker = fromEffectFnAff <<< _registerServiceWorker

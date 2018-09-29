@@ -5,7 +5,6 @@ import Prelude
 import Data.Array as A
 import Data.Enum (enumFromTo)
 import Data.Maybe (Maybe(..), fromJust)
-import Data.Newtype (unwrap)
 import Data.Newtype as NT
 import DOM.HTML.Indexed.ButtonType (ButtonType(ButtonButton))
 import DOM.HTML.Indexed.InputType (InputType(InputCheckbox))
@@ -16,7 +15,7 @@ import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 import Partial.Unsafe (unsafePartial)
 import Record (merge)
-import Ulpan.Model (Configuration(..), TestOrdering, TestDirection)
+import Ulpan.Model (Configuration(..), TestOrdering, TestDirection, (^))
 
 
 type State =
@@ -29,14 +28,13 @@ data Query a
   | ChangeDirection TestDirection a
   | ChangeShowNotes Boolean a
   | Apply a
-  | Cancel a
 
 type Input =
   { configuration ∷ Configuration
   }
 
 data Output
-  = NotifyConfiguration (Maybe Configuration)
+  = NotifyConfiguration Configuration
 
 type DSL = H.ComponentDSL State Query Output Aff
 
@@ -76,7 +74,7 @@ component =
                   ]
                   (orderings <#> \ordering →
                     HH.option
-                      [ HP.selected (ordering == (unwrap st.configuration).testOrdering) ]
+                      [ HP.selected $ ordering == st.configuration ^ _.testOrdering ]
                       [ HH.text (show ordering) ]
                   )
               ]
@@ -92,22 +90,24 @@ component =
                   ]
                   (directions <#> \direction →
                     HH.option
-                      [ HP.selected (direction == (unwrap st.configuration).testDirection) ]
+                      [ HP.selected $ direction == st.configuration ^ _.testDirection ]
                       [ HH.text (show direction) ]
                   )
               ]
           , HH.div
-              [ HP.class_ (HH.ClassName "form-group") ]
-              [ HH.label
-                  [ HP.for "show-notes" ]
-                  [ HH.text "Show Notes" ]
-              , HH.input
+              [ HP.class_ (HH.ClassName "form-check") ]
+              [ HH.input
                   [ HP.id_ "show-notes"
-                  , HP.class_ (HH.ClassName "form-control")
+                  , HP.class_ (HH.ClassName "form-check-input")
                   , HP.type_ InputCheckbox
-                  , HP.checked (unwrap st.configuration).showNotes
+                  , HP.checked $ st.configuration ^ _.showNotes
                   , HE.onChecked (HE.input ChangeShowNotes)
                   ]
+              , HH.label
+                  [ HP.for "show-notes"
+                  , HP.class_ (HH.ClassName "form-check-label")
+                  ]
+                  [ HH.text "Show Notes" ]
               ]
           , HH.button
               [ HP.type_ ButtonButton
@@ -116,14 +116,6 @@ component =
               ]
               [ HH.span_
                   [ HH.text "Apply"]
-              ]
-          , HH.button
-              [ HP.type_ ButtonButton
-              , HP.class_ (HH.ClassName "btn btn-secondary")
-              , HE.onClick (HE.input_ Cancel)
-              ]
-              [ HH.span_
-                  [ HH.text "Cancel"]
               ]
           ]
       ]
@@ -146,10 +138,8 @@ component =
     update _ { showNotes = showNotes } $> next
   eval (Apply next) = do
     configuration ← H.gets _.configuration
-    H.raise (NotifyConfiguration (Just configuration))
+    H.raise (NotifyConfiguration configuration)
     pure next
-  eval (Cancel next) =
-    H.raise (NotifyConfiguration Nothing) $> next
 
   update f =
     H.modify_ \st → st { configuration = NT.over Configuration f st.configuration }

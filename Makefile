@@ -13,7 +13,7 @@ build:
 test: #setup
 	npm run test
 
-serve: #build
+serve: build
 	npm run serve
 
 # since `build` and `test` are also a directory, it will not be built without this

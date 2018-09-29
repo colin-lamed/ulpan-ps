@@ -12,6 +12,7 @@
     "foreign-generic",
     "generics-rep",
     "halogen",
+    "node-fs",
     "numbers",
     "profunctor-lenses",
     "random",

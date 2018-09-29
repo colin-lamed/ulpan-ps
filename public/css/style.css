@@ -1,37 +1,11 @@
 body {
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-}
-
-.app-layout {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.app__content {
-  width: 320px;
-  height: 100%;
-  margin: 0 auto;
-  margin-top: 56px;
-  padding-top: 10px;
-}
-
-.container {
-  margin-top: 56px;
-  padding-top: 10px;
-}
-
-.form {
 }
 
 /* */
@@ -51,19 +25,19 @@ body {
 }
 
 .Small {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .Medium {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .Large {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .XLarge {
-  font-size: 6em;
+  font-size: 6rem;
 }
 
 a, a:visited, a:hover {

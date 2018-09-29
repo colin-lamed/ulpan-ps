@@ -13,7 +13,7 @@ import Foreign.Generic.Class (class GenericDecode)
 import Foreign.Generic.Types (Options)
 import Unsafe.Coerce (unsafeCoerce)
 
-foreign import parseYAMLImpl ∷ forall r. Fn3 (String → r) (Foreign → r) String r
+foreign import parseYAMLImpl ∷ ∀ r. Fn3 (String → r) (Foreign → r) String r
 
 -- | Attempt to parse a YAML string, returning the result as foreign data.
 parseYAML ∷ String → F Foreign
@@ -24,5 +24,5 @@ parseYAMLToJson ∷ String → F Json
 parseYAMLToJson yaml = parseYAML yaml >>= pure <<< unsafeCoerce
 
 -- | Automatically generate a YAML parser for your data from a generic instance.
-readYAMLGeneric ∷ forall a rep. (Generic a rep) ⇒ (GenericDecode rep) ⇒ Options → String → F a
+readYAMLGeneric ∷ ∀ a rep. (Generic a rep) ⇒ (GenericDecode rep) ⇒ Options → String → F a
 readYAMLGeneric opts = parseYAML >=> genericDecode opts
