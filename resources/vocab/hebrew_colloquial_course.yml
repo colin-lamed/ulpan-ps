@@ -306,12 +306,12 @@ unit 3 - list 1:
 
 unit 3 - time words:
   - english: this morning
-    hebrew: הבּוֹקר 
+    hebrew: הבּוֹקר
     note: ha’bóker
-  - english: tonight 
+  - english: tonight
     hebrew: הלילה
     note: ha’láylah
-  - english: today 
+  - english: today
     hebrew: היוֹם
     note: ha’yom
   - english: this week
@@ -323,7 +323,7 @@ unit 3 - time words:
   - english: this year
     hebrew: השׁנה
     note: ha’shanah
- 
+
 unit 3 - infinitive:
   - english: possible
     hebrew: אפשׁר
@@ -570,7 +570,7 @@ unit 4 - list 1:
   - english: vegetarian
     hebrew: צמחוני(ת)
     note: tsimkhoni(-t, f.)
-     
+
 unit 4 - list 2:
   - english: egg, eggs
     hebrew: ביצה, ביצים
@@ -718,10 +718,10 @@ unit 4 - adjectives:
     hebrew: קר, קרה, קרים, קרוֹת
     note: kar, karah, karim, karot
   - english: soft
-    hebrew: רך, רכה, רכים, רכוֹת 
+    hebrew: רך, רכה, רכים, רכוֹת
     note: rakh, rakah, rakim, rakot
   - english: hard
-    hebrew: קשׁה, קשׁה, קשׁים, קשׁוֹת 
+    hebrew: קשׁה, קשׁה, קשׁים, קשׁוֹת
     note: kasheh, kashah, kashim, kashot
   - english: sweet
     hebrew: מתוֹק, מתוּקה, מתוּקים, מתוּקוֹת
@@ -789,7 +789,7 @@ unit 4 - list 4:
     hebrew: ביצים רכוֹת,קשׁוֹת
     note: beytsim rakot,kashot
   - english: scrambled eggs
-    hebrew: מקוּשׁקשׁוֹת 
+    hebrew: מקוּשׁקשׁוֹת
     note: mekushkashot
 
 unit 4 - list 5:
@@ -1109,7 +1109,7 @@ unit 5 - family:
   - english: neighbour
     hebrew: שׁכן, שׁכנה
     note: shakhen, shakhenah
-     
+
 unit 5 - adjectives:
   - english: married
     hebrew: נשׂוּי (נשׂוּאה)
@@ -1156,7 +1156,7 @@ unit 5 - adjectives:
   - english: short
     hebrew: נמוּך(ה)
     note: namukh (nemukhah, f.)
-   
+
 unit 6 - list 1:
   - english: (item of) clothing
     hebrew: בגד
@@ -1279,7 +1279,7 @@ unit 6 - list 2:
     hebrew: לנסוע (נ-ס-ע)
     note: li’nsó-a
 
-unit 6 - list 3:
+unit 6 - list 3a:
   - english: pharmacy
     hebrew: בית מרקחת
     note: beyt mirkákhat (m.)
@@ -1320,7 +1320,7 @@ unit 6 - list 3:
     hebrew: תחנת דלק
     note: takhanat délek (f.)
 
-unit 6 - list 3:
+unit 6 - list 3b:
   - english: money
     hebrew: כסף
     note: késef (m.)
@@ -1358,7 +1358,7 @@ unit 6 - list 3:
     hebrew: גרב (גרביים)
     note: gérev (garbáyim, m./pl.)
 
-unit 6 - list 3:
+unit 6 - list 3c:
   - english: a great idea
     hebrew: יוֹפי שׁל רעיוֹן
     note: yofi shel ra-ayon
@@ -1383,7 +1383,7 @@ unit 6 - list 3:
   - english: hair appointment
     hebrew: תוֹר במספרה
     note: tor (m.) ba’misparah
-  
+
 unit 6 - list 4:
   - english: sales assistant
     hebrew: מוֹכר(ת)
@@ -1711,7 +1711,7 @@ unit 6 - list 6:
   - english: change/surplus
     hebrew: עוֹדף
     note: ódef(m.)
-    
+
 unit 7 - list 1:
   - english: call(s), ring(s)
     hebrew: מצלצלת (צ-ל-צ-ל)
@@ -1771,7 +1771,7 @@ unit 7 - list 1:
   - english: |
       difficult, hard*
       adverb + adj.
-    hebrew: קשׁה 
+    hebrew: קשׁה
     note: kasheh(-ah, f.)
   - english: to believe
     hebrew: להאמין
@@ -1799,7 +1799,7 @@ unit 7 - list 1:
   - english: to look for
     hebrew: לחפשׁ
     note: le’khapes G2
-    
+
 unit 7 - Group 2 verbs:
   - english: to search
     hebrew: לחפשׂ (ח-פ-שׂ)
@@ -2014,7 +2014,7 @@ unit 8 - list 1:
   - english: in my view
     hebrew: לפי דעתי
     note: l’fi da-ati
-  - english: (it’s) worth, worthwhile 
+  - english: (it’s) worth, worthwhile
     hebrew: כדאי
     note: keday
   - english: road
@@ -2236,7 +2236,7 @@ unit 8 - list 3:
     hebrew: צעד
     note: tsa-ad
 
-unit 8 - list 4:
+unit 8 - list 4a:
   - english: cross(es)
     hebrew: חוֹצה (ח-צ-ה)
     note: khotseh G1
@@ -2313,7 +2313,7 @@ unit 8 - list 4:
     hebrew: לוֹבשׁים (ל-ב-שׁ)
     note: lovshim G1
 
-unit 8 - list 4:
+unit 8 - list 4b:
   - english: fly in an airplane
     hebrew: טסים במטוֹס
     note: tasim b’matos
@@ -2354,7 +2354,7 @@ unit 8 - list 4:
     hebrew: סוּס
     note: sus (m.)
 
-unit 8 - list 4:
+unit 8 - list 4c:
   - english: twelve months in the Hebrew calendar
     hebrew: |
       תשׁרי, חשׁוון, כסלו, טבת
@@ -2469,7 +2469,7 @@ unit 9 - list 1:
   - english: football
     hebrew: כדוּר רגל
     note: kadur regel (m.)
-     
+
 unit 9 - list 2:
   - english: key
     hebrew: מפתח(וֹת)
@@ -2667,7 +2667,7 @@ unit 9 - list 4:
   - english: to show
     hebrew: להראוֹת (ר-א-ה)
     note: l’har-ot G3
-     
+
 unit 9 - professions:
   - english: profession(s)
     hebrew: מקצוֹע(וֹת)
@@ -2988,7 +2988,7 @@ unit 10 - list 3:
     note: shilton (m.)
   - english: settled (lit. ‘sat themselves’)
     hebrew: התיישׁבוּ (י-שׁ-ב)
-    note: hityashvu G4 
+    note: hityashvu G4
   - english: a Jew(ess)
     hebrew: יהוּדי(ה)
     note: yehudi(-ah, f.)
@@ -3349,9 +3349,9 @@ unit 11 - list 2:
   - english: with care, carefully
     hebrew: בזהירות
     note: bi’zhirut
- 
- 
- 
+
+
+
 unit 11 - list 3:
   - english: to feed
     hebrew: להאכיל (א-כ-ל)
@@ -3572,7 +3572,7 @@ unit 12 - list 1:
   - english: instead of
     hebrew: במקוֿם
     note: bimkom
- 
+
 unit 12 - list 2:
   - english: body
     hebrew: גוף
@@ -3652,7 +3652,7 @@ unit 12 - list 3:
   - english: against
     hebrew: נגד
     note: néged
- 
+
 
 unit 12 - list 4:
   - english: to enter
@@ -3700,7 +3700,7 @@ unit 12 - list 4:
   - english: a speedy recovery!
     hebrew: החלמה מהירה!
     note: hakhlamah mehirah
- 
+
 unit 12 - list 5:
   - english: thirsty
     hebrew: צמא
@@ -3726,7 +3726,7 @@ unit 12 - list 5:
   - english: spill, be poured out
     hebrew: להישֿפך (שֿ-פ-ך)
     note: l’hishafekh G5
- 
+
 unit 12 - list 6:
   - english: cutlery
     hebrew: סכו''ם
@@ -3767,7 +3767,7 @@ unit 12 - list 6:
   - english: spoon
     hebrew: כף
     note: kaf (f.)
- 
+
 unit 13 - list 1:
   - english: owner of
     hebrew: בעל(ת)
@@ -3832,19 +3832,19 @@ unit 13 - list 1:
   - english: modestly (lit. ‘with modesty’)
     hebrew: (ב) צניעות
     note: (b’)tsni-ut (f.)
-  - english: to what ? 
+  - english: to what ?
     hebrew: למה?
     note: l’mah?
-  - english: belief 
+  - english: belief
     hebrew: אמונה
     note: emunah (f.)
-  - english: different 
+  - english: different
     hebrew: שֿונה
     note: shoneh(-ah, f.)
-  - english: holy 
+  - english: holy
     hebrew: קדוֿשֿ(ה)
     note: kadosh (kedoshah, f.)
-  - english: light 
+  - english: light
     hebrew: אוֿר
     note: or
   - english: gold
@@ -3856,7 +3856,7 @@ unit 13 - list 1:
   - english: copper
     hebrew: נחוֿשֿת
     note: nekhóshet (f.)
- 
+
 unit 13 - list 2:
   - english: light, lamp
     hebrew: מנוֿרה
@@ -3867,7 +3867,7 @@ unit 13 - list 2:
   - english: to look after G2
     hebrew: לטפל ב…
     note: le’tapel + b’…
-  
+
   - english: red
     hebrew: אדוֿם/אדומה
     note: adom / adumah
@@ -3898,7 +3898,7 @@ unit 13 - list 2:
   - english: brown
     hebrew: חום/חומה
     note: khum / khumah
- 
+
 unit 13 - list 3:
   - english: jealousy, envy
     hebrew: קנאה
@@ -3937,7 +3937,7 @@ unit 13 - list 3:
   - english: girl
     hebrew: בחורה
     note: bakhurah (f.)
- 
+
 unit 13 - list 4:
   - english: look(s) (lit. ‘is seen’, f.)
     hebrew: נראית
@@ -3987,7 +3987,7 @@ unit 13 - list 4:
   - english: to change
     hebrew: לשֿנוֿת (שֿ-נ-ה)
     note: l’shanot G2
- 
+
 unit 13 - list 5:
   - english: tower
     hebrew: מגדל
@@ -4037,7 +4037,7 @@ unit 13 - list 5:
   - english: grave
     hebrew: קבר
     note: kéver (m.)
- 
+
 unit 14 - list 1:
   - english: dial
     hebrew: הייג (ח-י-ג)
@@ -4075,7 +4075,7 @@ unit 14 - list 1:
   - english: by (lit. ‘by the hands of’)
     hebrew: על ידי
     note: al yedey
- 
+
 unit 14 - list 2:
   - english: bride
     hebrew: כלה
@@ -4139,5 +4139,3 @@ unit 14 - list 3:
   - english: talk(s) nonsense
     hebrew: מדבר שֿטויוֿת
     note: medaber shtuyot
- 
- 

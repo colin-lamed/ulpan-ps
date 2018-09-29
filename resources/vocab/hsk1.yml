@@ -6,43 +6,43 @@ meta:
   language1_gravity: centre
   language2_gravity: centre
   language2_textsize: xlarge
-  
+
 "1-25":
   - english: woman
-    note: 
+    note:
     pinyin: nv3
     chinese: 女
   - english: thou
-    note: 
+    note:
     pinyin: er3
     chinese: 尔
   - english: well (good)
-    note: 
+    note:
     pinyin: hao3
     chinese: 好
   - english: mother
-    note: 
+    note:
     pinyin: ma1
     chinese: 妈
   - english: mother
-    note: 
+    note:
     pinyin:
       ma1 ma5; ma1 ma1
     chinese: 妈妈
   - english: horse
-    note: 
+    note:
     pinyin: ma3
     chinese: 马
   - english: child
-    note: 
+    note:
     pinyin: zi3
     chinese: 子
   - english: you
-    note: 
-    pinyin: ni3 
+    note:
+    pinyin: ni3
     chinese: 你
   - english: work
-    note: 
+    note:
     pinyin: gong1
     chinese: 工
   - english: to work
@@ -50,65 +50,65 @@ meta:
     pinyin: gong1 zuo4
     chinese: 工作
   - english: small
-    note: 
+    note:
     pinyin: xiao3
     chinese: 小
   - english: man
-    note: 
+    note:
     pinyin: ren2
     chinese: 人
   - english: hello
-    note: 
+    note:
     pinyin:
       ni3 hao3; ni2 hao3
     chinese: 你好
   - english: to do
-    note: 
+    note:
     pinyin: zuo4
     chinese: 作
   - english: wood (tree radical)
-    note: 
+    note:
     pinyin: mu4
     chinese: 木
   - english: crown (radical)
-    note: 
+    note:
     pinyin: mi4
     chinese: 冖
   - english: sheep
-    note: 
+    note:
     pinyin: yang2
     chinese: 羊
   - english: appearance
-    note: 
+    note:
     pinyin: yang4
     chinese: 样
   - english: suddenly
-    note: 
+    note:
     pinyin: zha4
     chinese: 乍
   - english: to see
-    note: 
+    note:
     pinyin: jian4
     chinese: 见
   - english: to sleep
-    note: 
+    note:
     pinyin: jiao4
     chinese: 觉
   - english: wrap (radical)
-    note: 
-    pinyin: 
+    note:
+    pinyin:
     chinese: 勹
   - english: man (squished to the side)
-    note: 
-    pinyin: 
+    note:
+    pinyin:
     chinese: 亻
   - english: drop (radical)
-    note: 
-    pinyin: 
+    note:
+    pinyin:
     chinese: 丶
   - english: cocoon (radical)
-    note: 
-    pinyin: 
+    note:
+    pinyin:
     chinese: 厶
 
 "26-50":
@@ -127,11 +127,11 @@ meta:
     pinyin: tian2
     chinese: 田
   - english: king
-    note: 
+    note:
     pinyin: wang2
     chinese: 王
   - english: earth
-    note: 
+    note:
     pinyin: tu3
     chinese: 土
   - english: two
@@ -139,7 +139,7 @@ meta:
     pinyin: er4
     chinese: 二
   - english: "village (also: in, inside)"
-    note: 
+    note:
     pinyin: li3
     chinese: 里
   - english: heavy
@@ -151,7 +151,7 @@ meta:
     pinyin: chui2
     chinese: 垂
   - english: eye
-    note: 
+    note:
     pinyin: mu4
     chinese: 目
   - english: to sleep
@@ -163,7 +163,7 @@ meta:
     pinyin: shui4 jiao4
     chinese: 睡觉
   - english: hand
-    note: 
+    note:
     pinyin: shou3
     chinese: 手
   - english: sign
@@ -180,7 +180,7 @@ meta:
     pinyin: yuan2
     chinese: 元
   - english: roof (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 宀
   - english: "end (also: finished, to run out)"
@@ -204,16 +204,16 @@ meta:
     pinyin: zen3 me5
     chinese: 怎么
   - english: factory, slope (radical meaning)
-    note: 
+    note:
     pinyin: chang3
     chinese: 厂
   - english:
       vast, lean-to (radical)
-    note: 
+    note:
     pinyin: guang3
     chinese: 广
   - english: magical (radical)
-    note: 
+    note:
     pinyin: bu3
     chinese: 卜
 
@@ -279,15 +279,15 @@ meta:
     pinyin: xia4
     chinese: 下
   - english: cloth
-    note: 
+    note:
     pinyin: jin1
     chinese: 巾
   - english: rain
-    note: 
+    note:
     pinyin: yu3
     chinese: 雨
   - english: to rain
-    note: 
+    note:
     pinyin: xia4 yu3
     chinese: 下雨
   - english: body
@@ -299,7 +299,7 @@ meta:
     pinyin: cun4
     chinese: 寸
   - english: word (squished to the side)
-    note: 
+    note:
     pinyin: "-"
     chinese: 讠
   - english: to thank
@@ -307,7 +307,7 @@ meta:
     pinyin: xie4
     chinese: 谢
   - english: hand (squished to the side)
-    note: 
+    note:
     pinyin: "-"
     chinese: 扌
   - english: nine
@@ -319,13 +319,13 @@ meta:
     pinyin: wan2
     chinese: 丸
   - english: fire
-    note: 
+    note:
     pinyin: huo3
     chinese: 火
 
 "76-100":
   - english: four dots fire (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 灬
   - english: heat
@@ -341,55 +341,55 @@ meta:
     pinyin: cai2
     chinese: 才
   - english: located
-    note: 
+    note:
     pinyin: zai4
     chinese: 在
   - english: and yet, beard (radical)
-    note: 
+    note:
     pinyin: er2
     chinese: 而
   - english: face
-    note: 
+    note:
     pinyin: mian4
     chinese: 面
   - english: behind
-    note: 
+    note:
     pinyin: hou4
     chinese: 后
   - english: rear
-    note: 
+    note:
     pinyin: hou4 mian4
     chinese: 后面
   - english: lid (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 亠
   - english: capital
-    note: 
+    note:
     pinyin: jing1
     chinese: 京
   - english: streaks (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 彡
   - english: sun
-    note: 
+    note:
     pinyin: ri4
     chinese: 日
   - english: shadow
-    note: 
+    note:
     pinyin: ying3
     chinese: 影
   - english: electricity
-    note: 
+    note:
     pinyin: dian4
     chinese: 电
   - english: film
-    note: 
+    note:
     pinyin: dian4 ying3
     chinese: 电影
   - english: half a kilo, axe (radical)
-    note: 
+    note:
     pinyin: jin1
     chinese: 斤
   - english: to listen
@@ -397,77 +397,77 @@ meta:
     pinyin: ting1
     chinese: 听
   - english: ten
-    note: 
+    note:
     pinyin: shi2
     chinese: 十
   - english: big
-    note: 
+    note:
     pinyin: da4
     chinese: 大
   - english: heaven
-    note: 
+    note:
     pinyin: tian1
     chinese: 天
   - english: few
-    note: 
+    note:
     pinyin: shao3
     chinese: 少
   - english: dusk
-    note: 
+    note:
     pinyin: xi1
     chinese: 夕
   - english: many
-    note: 
+    note:
     pinyin: duo1
     chinese: 多
   - english: how much
-    note: 
+    note:
     pinyin: duo1 shao3; duo1 shao5
     chinese: 多少
 
 "101-125":
   - english: to call
-    note: 
+    note:
     pinyin: jiao4
     chinese: 叫
   - english: name
-    note: 
+    note:
     pinyin: ming2
     chinese: 名
   - english: upon
-    note: 
+    note:
     pinyin: shang4
     chinese: 上
   - english: dry
-    note: 
+    note:
     pinyin: gan1
     chinese: 干
   - english: noon
-    note: 
+    note:
     pinyin: wu3
     chinese: 午
   - english: morning
-    note: 
+    note:
     pinyin: shang4 wu3
     chinese: 上午
   - english: sign (squished to the side)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 礻
   - english: to look at
-    note: 
+    note:
     pinyin: shi4
     chinese: 视
   - english: television
-    note: 
+    note:
     pinyin: dian4 shi4
     chinese: 电视
   - english: mountain
-    note: 
+    note:
     pinyin: shan1
     chinese: 山
   - english: to go out
-    note: 
+    note:
     pinyin: chu1
     chinese: 出
   - english: car
@@ -483,43 +483,43 @@ meta:
     pinyin: shi3
     chinese: 矢
   - english: basket (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 匸
   - english: mound or city (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 阝
   - english: courtyard
-    note: 
+    note:
     pinyin: yuan4
     chinese: 院
   - english: doctor
-    note: 
+    note:
     pinyin: yi1
     chinese: 医
   - english: hospital
-    note: 
+    note:
     pinyin: yi1 yuan4
     chinese: 医院
   - english: three
-    note: 
+    note:
     pinyin: san1
     chinese: 三
   - english: not
-    note: 
+    note:
     pinyin: bu4
     chinese: 不
   - english: he
-    note: 
+    note:
     pinyin: ta1
     chinese: 他
   - english: moon, month
-    note: 
+    note:
     pinyin: yue4
     chinese: 月
   - english: first, previously, to precede
-    note: 
+    note:
     pinyin: xian1
     chinese: 先
   - english: to be born
@@ -529,15 +529,15 @@ meta:
 
 "126-150":
   - english: Mr.
-    note: 
+    note:
     pinyin: xian1 sheng1
     chinese: 先生
   - english: also
-    note: 
+    note:
     pinyin: ye3
     chinese: 也
   - english: jade
-    note: 
+    note:
     pinyin: yu4
     chinese: 玉
   - english: surround
@@ -545,51 +545,51 @@ meta:
     pinyin: wei2
     chinese: 囗
   - english: kingdom
-    note: 
+    note:
     pinyin: guo2
     chinese: 国
   - english: gate
-    note: 
+    note:
     pinyin: men2
     chinese: 门
   - english: plural
-    note: 
+    note:
     pinyin: men5
     chinese: 们
   - english: "dart (also: dagger)"
-    note: 
+    note:
     pinyin: yi4
     chinese: 弋
   - english: "lance (also: spear)"
-    note: 
+    note:
     pinyin: ge1
     chinese: 戈
   - english: "I (also: me)"
-    note: 
+    note:
     pinyin: wo3
     chinese: 我
   - english: we
-    note: 
+    note:
     pinyin: wo3 men5
     chinese: 我们
   - english: ladle
-    note: 
+    note:
     pinyin: bi3
     chinese: 匕
   - english: corpse (radical)
-    note: 
+    note:
     pinyin: shi1
     chinese: 尸
   - english: nun
-    note: 
+    note:
     pinyin: ni2
     chinese: 尼
   - english: a particle (a grammatical particle, not a physical one)
-    note: 
+    note:
     pinyin: ne5
     chinese: 呢
   - english: gown
-    note: 
+    note:
     pinyin: yi1
     chinese: 衣
   - english: hello
@@ -597,7 +597,7 @@ meta:
     pinyin: wei4
     chinese: 喂
   - english: fish hook
-    note: 
+    note:
     pinyin: yi3
     chinese: 乙
   - english: to breathe
@@ -605,27 +605,27 @@ meta:
     pinyin: qi4
     chinese: 气
   - english: to stand
-    note: 
+    note:
     pinyin: li4
     chinese: 立
   - english: "relatives (also: parent)"
-    note: 
+    note:
     pinyin: qin1
     chinese: 亲
   - english: new
-    note: 
+    note:
     pinyin: xin1
     chinese: 新
   - english: to repeat
-    note: 
+    note:
     pinyin: chong2
     chinese: 重
   - english: stick (radical)
-    note: 
+    note:
     pinyin: gun3
     chinese: 丨
   - english: again
-    note: 
+    note:
     pinyin: zai4
     chinese: 再
 
@@ -635,43 +635,43 @@ meta:
     pinyin: no pronunciation
     chinese: 幺
   - english: silk
-    note: 
+    note:
     pinyin: mi4
     chinese: 糸
   - english: department
-    note: 
+    note:
     pinyin: xi4
     chinese: 系
   - english: shut; to concern
-    note: 
+    note:
     pinyin: guan1
     chinese: 关
   - english: pattern
-    note: 
+    note:
     pinyin: wen2
     chinese: 文
   - english: path (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 辶
   - english: this
-    note: 
+    note:
     pinyin: zhe4
     chinese: 这
   - english: here
-    note: 
+    note:
     pinyin: zhe4 er5
     chinese: 这儿
   - english: middle
-    note: 
+    note:
     pinyin: zhong1
     chinese: 中
   - english: noon
-    note: 
+    note:
     pinyin: zhong1 wu3
     chinese: 中午
   - english: table
-    note: 
+    note:
     pinyin: zhuo1
     chinese: 桌
   - english: table
@@ -679,7 +679,7 @@ meta:
     pinyin: zhuo1 zi5
     chinese: 桌子
   - english: yesterday
-    note: 
+    note:
     pinyin: zuo2
     chinese: 昨
   - english: yesterday
@@ -687,379 +687,379 @@ meta:
     pinyin: zuo2 tian1
     chinese: 昨天
   - english: star
-    note: 
+    note:
     pinyin: xing1
     chinese: 星
   - english: collectively
-    note: 
+    note:
     pinyin: gong4
     chinese: 共
   - english: such (refers to something preceding it)
-    note: 
+    note:
     pinyin: qi2
     chinese: 其
   - english: a period of time
-    note: 
+    note:
     pinyin: qi1
     chinese: 期
   - english: week
-    note: 
+    note:
     pinyin: xing1 qi1
     chinese: 星期
   - english: to study
-    note: 
+    note:
     pinyin: xue2
     chinese: 学
   - english: student
-    note: 
+    note:
     pinyin: xue2 shen5; xue2 sheng1
     chinese: 学生
   - english: ice
-    note: 
+    note:
     pinyin: bing1
     chinese: 冫
   - english: to practice
-    note: 
+    note:
     pinyin: xi2
     chinese: 习
   - english: to learn
-    note: 
+    note:
     pinyin: xue2 xi2
     chinese: 学习
   - english: father
-    note: 
+    note:
     pinyin: fu4
     chinese: 父
 
 "176-200":
   - english: to exchange
-    note: 
+    note:
     pinyin: jiao1
     chinese: 交
   - english: school
-    note: 
+    note:
     pinyin: xiao4
     chinese: 校
   - english: to check
-    note: 
+    note:
     pinyin: jiao4
     chinese: 校
   - english: school
-    note: 
+    note:
     pinyin: xue2 xiao4
     chinese: 学校
   - english: seal (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 卩
   - english: to serve
-    note: 
+    note:
     pinyin: fu2
     chinese: 服
   - english: clothes
-    note: 
+    note:
     pinyin: yi1 fu2
     chinese: 衣服
   - english: nail
-    note: 
+    note:
     pinyin: ding1
     chinese: 丁
   - english: can
-    note: 
+    note:
     pinyin: ke3
     chinese: 可
   - english: weird
-    note: 
+    note:
     pinyin: qi2
     chinese: 奇
   - english: chair
-    note: 
+    note:
     pinyin: yi3
     chinese: 椅
   - english: chair
-    note: 
+    note:
     pinyin: yi3 zi5
     chinese: 椅子
   - english: goodbye
-    note: 
+    note:
     pinyin: zai4 jian4
     chinese: 再见
   - english: to fall
-    note: 
+    note:
     pinyin: xia4
     chinese: 下
   - english: afternoon
-    note: 
+    note:
     pinyin: xia4 wu3
     chinese: 下午
   - english: now
-    note: 
+    note:
     pinyin: xian4
     chinese: 现
   - english: older sister
-    note: 
+    note:
     pinyin: jie3
     chinese: 姐
   - english: young lady
-    note: 
+    note:
     pinyin: xiao3 jie5, xiao3 jie3
     chinese: 小姐
   - english: eight
-    note: 
+    note:
     pinyin: ba1
     chinese: 八
   - english: older brother
-    note: 
+    note:
     pinyin: xiong1
     chinese: 兄
   - english: to hand over
-    note: 
+    note:
     pinyin: dui4
     chinese: 兑
   - english: to speak
-    note: 
+    note:
     pinyin: shuo1
     chinese: 说
   - english: ancient
-    note: 
+    note:
     pinyin: gu3
     chinese: 古
   - english: tongue
-    note: 
+    note:
     pinyin: she2
     chinese: 舌
   - english: speech
-    note: 
+    note:
     pinyin: hua4
     chinese: 话
 
 "201-225":
   - english: to speak
-    note: 
+    note:
     pinyin: shuo1 hua4
     chinese: 说话
   - english: weather
-    note: 
+    note:
     pinyin: tian1 qi4
     chinese: 天气
   - english: glass jar (radical)
-    note: 
+    note:
     pinyin: jiong1
     chinese: 冂
   - english: the same
-    note: 
+    note:
     pinyin: tong2
     chinese: 同
   - english: classmate
-    note: 
+    note:
     pinyin: tong2 xue2
     chinese: 同学
   - english: small knife (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 刂
   - english: front
-    note: 
+    note:
     pinyin: qian2
     chinese: 前
   - english: ahead
-    note: 
+    note:
     pinyin: qian2 mian4
     chinese: 前面
   - english: only
-    note: 
+    note:
     pinyin: zhi3
     chinese: 只
   - english: knowledge
-    note: 
+    note:
     pinyin: shi2
     chinese: 识
   - english: to recognize
-    note: 
+    note:
     pinyin: ren4
     chinese: 认
   - english: to know
-    note: 
+    note:
     pinyin: ren4 shi5
     chinese: 认识
   - english: to trade
-    note: 
+    note:
     pinyin: shang1
     chinese: 商
   - english: store
-    note: 
+    note:
     pinyin: shang1 dian4
     chinese: 商店
   - english: what
-    note: 
+    note:
     pinyin: shen2
     chinese: 什
   - english: what?
-    note: 
+    note:
     pinyin: shen2 me5
     chinese: 什么
   - english: bright
-    note: 
+    note:
     pinyin: ming2
     chinese: 明
   - english: tomorrow
-    note: 
+    note:
     pinyin: ming2 tian1
     chinese: 明天
   - english: Chinese character
-    note: 
+    note:
     pinyin: zi4
     chinese: 字
   - english: name
-    note: 
+    note:
     pinyin: ming2 zi5
     chinese: 名字
   - english: that
-    note: 
+    note:
     pinyin: na4
     chinese: 那
   - english: which
-    note: 
+    note:
     pinyin: na3
     chinese: 哪
   - english: where?
-    note: 
+    note:
     pinyin: na3 er5
     chinese: 哪儿
   - english: there
-    note: 
+    note:
     pinyin: na4 er5
     chinese: 那儿
   - english: daughter
-    note: 
+    note:
     pinyin: nv3 er2
     chinese: 女儿
 
 "226-250":
   - english: friend
-    note: 
+    note:
     pinyin: peng2
     chinese: 朋
   - english: friend
-    note: 
+    note:
     pinyin: you3
     chinese: 友
   - english: friend
-    note: 
+    note:
     pinyin: peng2 you5
     chinese: 朋友
   - english: light
-    note: 
+    note:
     pinyin: liang4
     chinese: 亮
   - english: west
-    note: 
+    note:
     pinyin: xi1
     chinese: 西
   - english: ticket
-    note: 
+    note:
     pinyin: piao4
     chinese: 票
   - english: to float
-    note: 
+    note:
     pinyin: piao1
     chinese: 飘
   - english: pretty
-    note: 
+    note:
     pinyin: piao1 liang5
     chinese: 飘亮
   - english: to weigh
-    note: 
+    note:
     pinyin: ping2
     chinese: 平
   - english: grass (radical)
-    note: 
+    note:
     pinyin: no pronunciation
     chinese: 艹
   - english: apple
-    note: 
+    note:
     pinyin: ping2
     chinese: 苹
   - english: fruit
-    note: 
+    note:
     pinyin: guo3
     chinese: 果
   - english: apple
-    note: 
+    note:
     pinyin: ping2 guo3
     chinese: 苹果
   - english: old
-    note: 
+    note:
     pinyin: lao3
     chinese: 老
   - english: smart, handsome
-    note: 
+    note:
     pinyin: shuai4
     chinese: 帅
   - english: teacher
-    note: 
+    note:
     pinyin: shi1
     chinese: 师
   - english: teacher
-    note: 
+    note:
     pinyin: lao3 shi1
     chinese: 老师
   - english: to fasten
-    note: 
+    note:
     pinyin: ji4
     chinese: 系
   - english: relationship
-    note: 
+    note:
     pinyin: guan1 xi5; guan1 xi4
     chinese: 关系
   - english: without
-    note: 
+    note:
     pinyin: mei2
     chinese: 没
   - english: it doesn't matter
-    note: 
+    note:
     pinyin: mei2 guan1 xi5
     chinese: 没关系
   - english: station
-    note: 
+    note:
     pinyin: zhan4
     chinese: 站
   - english: train
-    note: 
+    note:
     pinyin: hou3 che1
     chinese: 火车
   - english: train station
-    note: 
+    note:
     pinyin: hou3 che1 zhan4
     chinese: 火车站
   - english: to look
-    note: 
+    note:
     pinyin: kan4
     chinese: 看
 
 "251-275":
   - english: to look after
-    note: 
+    note:
     pinyin: kan1; kan4
     chinese: 看
   - english: to see
-    note: 
+    note:
     pinyin: kan4 jian4
     chinese: 看见
   - english: east
-    note: 
+    note:
     pinyin: dong1
     chinese: 东
   - english: thing
-    note: 
+    note:
     pinyin: dong1 xi5
     chinese: 东西
   - english: head
-    note: 
+    note:
     pinyin: tou2
     chinese: 头
   - english: to read
-    note: 
+    note:
     pinyin: du2
     chinese: 读
   - english: against, correct
