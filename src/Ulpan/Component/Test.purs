@@ -21,6 +21,7 @@ import Record (merge)
 import Ulpan.LocalStorage (storeIndex, restoreIndex)
 import Ulpan.Model (Configuration, Group, TestDirection(..), TestOrdering(..), Vocab, VocabEntry, (^))
 import Ulpan.Util (shuffle)
+import Ulpan.Component.Swipe (swipe, SwipeDir(..))
 
 
 
@@ -55,6 +56,7 @@ data Query a
   | HandleInput Input a
   | Next a
   | ToggleShowAnswer a
+  | HandleSwipeEvent SwipeDir (H.SubscribeStatus -> a)
 
 type Input =
   { vocab         ∷ Vocab
@@ -101,7 +103,9 @@ component =
         [ HP.class_ (HH.ClassName "text-center") ]
         [ HH.text $ show st.index ]
        , HH.table
-        [ HP.class_ (HH.ClassName "test-table") ]
+        [ HP.ref (H.RefLabel "test-table")
+        , HP.class_ (HH.ClassName "test-table")
+        ]
       $ [ HH.tr_
           [ HH.td
             [ HP.class_ (HH.ClassName $ "textarea") ]
@@ -133,7 +137,9 @@ component =
         ] <> (if st.configuration ^ _.showNotes then
                [ HH.tr_
                  [ HH.td
-                   [ HP.class_ (HH.ClassName $ "textarea " <> notesWrapperClass) ]
+                   [ HP.class_ (HH.ClassName $ "textarea " <> notesWrapperClass)
+                   , HE.onClick (HE.input_ ToggleShowAnswer)
+                   ]
                    [ HH.div
                      [ HP.class_ (HH.ClassName notesClass) ]
                      [ HH.text notes ]
@@ -218,6 +224,11 @@ component =
     st ← H.get
     initFromL1 st.configuration
     initIndex st.configuration st.vocab st.groups
+
+    H.getHTMLElementRef (H.RefLabel "test-table") >>= case _ of
+      Nothing  -> pure unit
+      Just elm -> H.subscribe $ H.eventSource (swipe { threshold : 50 } elm) (Just <<< H.request <<< HandleSwipeEvent)
+
     pure next
 
   eval (HandleInput input next) = do
@@ -237,11 +248,11 @@ component =
     H.modify_ \st -> st { showAnswer = not st.showAnswer }
     pure next
 
-  eval (Next next) = do
-    st ← H.get
-    let vocabEntries = lfVocab st.vocab st.groups
-    updateIndex vocabEntries st.index
-    pure next
+  eval (Next next) = advanceIndex $> next
+
+  eval (HandleSwipeEvent dir reply) = do
+    when (dir == SDLeft) advanceIndex
+    pure (reply H.Listening)
 
   initFromL1 configuration = do
     fromL1 ← case configuration ^ _.testDirection of
@@ -264,6 +275,10 @@ component =
                       }
     H.liftEffect $ storeIndex i
 
+  advanceIndex = do
+    st ← H.get
+    let vocabEntries = lfVocab st.vocab st.groups
+    updateIndex vocabEntries st.index
 
 mkIdx ∷ TestOrdering → Int → Int → Effect Index
 mkIdx FileOrdered length current =

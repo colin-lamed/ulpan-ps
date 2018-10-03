@@ -30,8 +30,7 @@ instance showGravity ∷ Show Gravity where
 
 instance decodeJsonGravity ∷ DecodeJson Gravity where
   decodeJson json = do
-    s ← note "Gravity not a string" (toString json)
-    case s of
+    note "Gravity not a string" (toString json) >>= case _ of
       "right"  → pure GRight
       "centre" → pure GCentre
       _        → pure GLeft
@@ -48,8 +47,7 @@ instance showTextSize ∷ Show TextSize where
 
 instance decodeJsonTextSize ∷ DecodeJson TextSize where
   decodeJson json = do
-    s ← note "TextSize not a string" (toString json)
-    case s of
+    note "TextSize not a string" (toString json) >>= case _ of
       "small"  → pure Small
       "large"  → pure Large
       "xlarge" → pure XLarge
@@ -68,14 +66,13 @@ instance showLanguage ∷ Show Language where
   show = genericShow
 
 instance decodeJsonLanguage ∷ DecodeJson Language where
-  decodeJson json = do
-    s ← note "Language not a string" (toString json)
-    pure $ Language s
+  decodeJson json =
+    Language <$> note "Language not a string" (toString json)
 
 newtype VocabEntry = VocabEntry
   { language1 ∷ Language
   , language2 ∷ Language
-  , note      ∷  String
+  , note      ∷ String
   }
 
 derive instance newtypeVocabEntry ∷ Newtype VocabEntry _
@@ -118,8 +115,8 @@ instance showGroup ∷ Show Group where
   show = genericShow
 
 instance decodeJsonGroup ∷ DecodeJson Group where
-  decodeJson json = do
-    map Group $ note "Group not a string" (toString json)
+  decodeJson json =
+    Group <$> note "Group not a string" (toString json)
 
 
 newtype Meta = Meta
