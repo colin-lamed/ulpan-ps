@@ -5,11 +5,9 @@ import Prelude
 import Data.Array as A
 import Data.Either (hush)
 import Data.Map as M
-import Data.Maybe (Maybe(..), fromJust, fromMaybe)
+import Data.Maybe (Maybe(..), fromJust)
 import Data.Newtype (unwrap)
-import Data.Tuple (Tuple(..))
 import DOM.HTML.Indexed.ButtonType (ButtonType(ButtonButton))
-import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Random (randomBool, randomInt)
 import Halogen as H
@@ -18,27 +16,11 @@ import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 import Partial.Unsafe (unsafePartial)
 import Record (merge)
-import Ulpan.LocalStorage (storeIndex, restoreIndex)
-import Ulpan.Model (Configuration, Group, TestDirection(..), TestOrdering(..), Vocab, VocabEntry, (^))
-import Ulpan.Util (shuffle)
 import Ulpan.Component.Swipe (swipe, SwipeDir(..))
-
-
-
-data Index = FileOrderedIndex { length          ∷ Int
-                              , current         ∷ Int
-                              }
-           | ShuffledIndex    { length          ∷ Int
-                              , current         ∷ Int
-                              , shuffledIndices ∷ Array Int
-                              }
-           | RandomIndex      { length          ∷ Int
-                              }
-
-instance showIndex ∷ Show Index where
-  show (FileOrderedIndex { length, current }) = "File Ordered (" <> show current <> "/" <> show length <> ")"
-  show (ShuffledIndex { length, current })    = "Shuffled (" <> show current <> "/" <> show length <> ")"
-  show (RandomIndex _)                        = "Random"
+import Ulpan.LocalStorage (storeIndex, restoreIndex)
+import Ulpan.Model (Configuration, Group, TestDirection(..), Vocab, VocabEntry, (^))
+import Ulpan.Model.Index (Index(..))
+import Ulpan.Model.Index as Idx
 
 
 type State =
@@ -223,7 +205,7 @@ component =
   eval (Initialize next) = do
     st ← H.get
     initFromL1 st.configuration
-    initIndex st.configuration st.vocab st.groups
+    initIndex false st.configuration st.vocab st.groups
 
     H.getHTMLElementRef (H.RefLabel "test-table") >>= case _ of
       Nothing  -> pure unit
@@ -240,8 +222,8 @@ component =
          || input.groups /= st.groups
          || input.configuration ^ _.testOrdering /= st.configuration ^ _.testOrdering
          ) $ do
-      H.liftEffect $ storeIndex 0
-      initIndex input.configuration input.vocab input.groups
+      initIndex true input.configuration input.vocab input.groups
+      H.gets _.index >>= storeIndex >>> H.liftEffect
     pure next
 
   eval (ToggleShowAnswer next) = do
@@ -261,49 +243,32 @@ component =
                DShuffled     → H.liftEffect randomBool
     H.modify_ $ merge { fromL1 }
 
-  initIndex configuration vocab groups = do
-    let vocabEntries = lfVocab vocab groups
-    current ← H.liftEffect $ restoreIndex
-    index  ← H.liftEffect $ mkIdx (configuration ^ _.testOrdering) (A.length vocabEntries) (fromMaybe 0 $ hush current)
-    updateIndex vocabEntries index
+  initIndex isChange configuration vocab groups = do
+    let mIndex = if isChange
+                   then pure Nothing
+                   else map hush restoreIndex
+    index ← H.liftEffect $ mIndex >>= case _ of
+      Just index → pure index
+      Nothing    → do
+        let vocabEntries = lfVocab vocab groups
+        seed ← randomInt 0 1000 >>= show >>> pure
+        Idx.mkIndex (configuration ^ _.testOrdering) (A.length vocabEntries) 0 seed
+    updateIndex index
 
-  updateIndex vocabEntries index = do
-    Tuple i index' ← H.liftEffect $ getNextIndex index
-    H.modify_ $ merge { index      : index'
+  updateIndex index = do
+    st ← H.get
+    let vocabEntries = lfVocab st.vocab st.groups
+    let i = Idx.getCurrent index
+    H.modify_ $ merge { index
                       , current    : unsafePartial fromJust $ vocabEntries A.!! i -- can we prove i is in range?
                       , showAnswer : false
                       }
-    H.liftEffect $ storeIndex i
+    H.liftEffect $ storeIndex index
 
   advanceIndex = do
     st ← H.get
-    let vocabEntries = lfVocab st.vocab st.groups
-    updateIndex vocabEntries st.index
-
-mkIdx ∷ TestOrdering → Int → Int → Effect Index
-mkIdx FileOrdered length current =
-  pure $ FileOrderedIndex { length, current }
-mkIdx Shuffled length current =
-  shuffle (A.range 0 length) <#> \shuffledIndices → ShuffledIndex { length, current, shuffledIndices }
-mkIdx Random length _ =
-  pure (RandomIndex { length })
-
-getNextIndex ∷ Index → Effect (Tuple Int Index)
-getNextIndex (FileOrderedIndex { length,  current }) = do
-  let next = current + 1 `mod` length
-  pure $ Tuple next $ FileOrderedIndex { length
-                                       , current : next
-                                       }
-getNextIndex (ShuffledIndex { length, current, shuffledIndices }) =
-  case A.uncons shuffledIndices of
-    Nothing            → mkIdx Shuffled length 0 >>= getNextIndex
-    Just { head, tail} → pure $ Tuple head $ ShuffledIndex { length
-                                                           , current         : current + 1
-                                                           , shuffledIndices : tail
-                                                           }
-getNextIndex (RandomIndex { length }) = do
-  next ← randomInt 0 length
-  pure $ Tuple next $ RandomIndex { length }
+    index' ← H.liftEffect $ Idx.advanceIndex st.index
+    updateIndex index'
 
 
 lfVocab ∷ Vocab → Array Group → Array VocabEntry

@@ -1,20 +1,20 @@
 "use strict";
 
-var $ = require("jquery");
+var seedrandom = require('seedrandom');
 
-// for `hideModal`. Also required to keep bootstrap when bundling as a single js file.
-var Bootstrap = require("bootstrap");
-
-exports.shuffle = function(a1) {
-  return function() {
-    var a = a1.slice();
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
-    }
-    return a;
+exports.shuffle = function(seed) {
+  return function(a1) {
+    return function() {
+      var rng = seedrandom(seed);
+      var a = a1.slice();
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+          j = Math.floor(rng() * (i + 1));
+          x = a[i];
+          a[i] = a[j];
+          a[j] = x;
+      }
+      return a;
+    };
   };
 }

@@ -5,7 +5,6 @@ import Control.Monad.Except (runExcept)
 import Data.Bifunctor (lmap)
 import Data.Either (Either(..))
 import Data.Foldable (intercalate)
-import Data.Int (fromString)
 import Data.Maybe (Maybe, maybe)
 import Data.Newtype (unwrap)
 import Data.Nullable (Nullable, toMaybe)
@@ -14,6 +13,7 @@ import Data.String.Pattern (Pattern(..))
 import Effect (Effect)
 import Foreign.Generic (defaultOptions, genericDecodeJSON, genericEncodeJSON)
 import Ulpan.Model (Configuration, Group(..), Mode, VocabFile)
+import Ulpan.Model.Index (Index)
 
 
 foreign import setLocalStorage
@@ -70,16 +70,20 @@ restoreVocabFile =
     >>= maybe (Left "No vocabFile") decodeVocabFile
     >>> pure
 
-storeIndex ∷ Int → Effect Unit
-storeIndex = show >>> setLocalStorage "index"
+encodeIndex ∷ Index → String
+encodeIndex = genericEncodeJSON defaultOptions
 
-restoreIndex ∷ Effect (Either String Int)
+decodeIndex ∷ String → Either String Index
+decodeIndex = lmap show <<< runExcept <<< genericDecodeJSON defaultOptions
+
+storeIndex ∷ Index → Effect Unit
+storeIndex = encodeIndex >>> setLocalStorage "index"
+
+restoreIndex ∷ Effect (Either String Index)
 restoreIndex =
   getLocalStorage "index"
-    >>= (_ >>= fromString) >>> pure
-    >>= maybe (Left "No index") Right
+    >>= maybe (Left "No index") decodeIndex
     >>> pure
-
 
 -- TODO store as json (separator may already be contained in string)
 storeGroups :: Array Group -> Effect Unit
